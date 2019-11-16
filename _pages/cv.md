@@ -11,5 +11,5 @@ redirect_from:
 
 
 \begin{center} <br>
-\includegraphics[width=8in]{elitalobo_cv.pdf} <br>
+\includegraphics[width=8in]{ELITA_LOBO_CV_2019.pdf} <br>
 \end{center}
