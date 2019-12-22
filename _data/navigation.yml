@@ -20,8 +20,8 @@ main:
   - title: "Blogs"
     url: /year-archive/
     
-  - title: "CV/Bio"
-    url: /cv/
+  #- title: "CV/Bio"
+  #  url: /cv/
     
   - title: "Contact"
     url: /contact/  
