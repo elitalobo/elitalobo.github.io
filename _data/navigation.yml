@@ -9,8 +9,8 @@ main:
   - title: "Teaching Assistantships"
     url: /teaching/    
     
-#   - title: "Projects"
-#     url: /portfolio/
+   - title: "Portfolio"
+     url: /portfolio/
         
   - title: "Blog Posts"
     url: /year-archive/
