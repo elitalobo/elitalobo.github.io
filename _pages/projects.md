@@ -63,4 +63,4 @@ Developed an algorithm for efficiently minimizing floor planning area using a va
 
 **Anomalous Payout Detector**
 Developed a time-series based model based on order history and payout history that could detect anomalous payouts made to sellers due to various bugs in the continuously evolving accounting system with high accuracy.
-<img align="center" width="300" height="600" src="https://github.com/elitalobo/elitalobo.github.io/blob/master/files/anomalous_payout_detection.png"> \
+<img align="center" width="600" height="300" src="https://github.com/elitalobo/elitalobo.github.io/blob/master/files/anomalous_payout_detection.png"> \
