@@ -59,8 +59,9 @@ Developed an algorithm for efficiently minimizing floor planning area using a va
 \
 \
 <img align="center" width="400" height="400" src="https://github.com/elitalobo/elitalobo.github.io/blob/master/files/test20.png"> \
-[Code](https://github.com/elitalobo/FloorPlanningArea_Minimization_Algorithm) \
-
+[Code](https://github.com/elitalobo/FloorPlanningArea_Minimization_Algorithm) 
+\
+\
 **Anomalous Payout Detector**
-Developed a time-series based model based on order history and payout history that could detect anomalous payouts made to sellers due to various bugs in the continuously evolving accounting system with high accuracy.
+Developed a time-series based model based on order history and payout history that could detect anomalous payouts made to sellers due to various bugs in the continuously evolving accounting system with high accuracy. \
 <img align="center" width="600" height="300" src="https://github.com/elitalobo/elitalobo.github.io/blob/master/files/anomalous_payout_detection.png"> \
