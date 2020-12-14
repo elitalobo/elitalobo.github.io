@@ -8,7 +8,7 @@ author_profile: true
 **Soft Option-Critic** <br/>
 Hierarchical Reinforcement learning aims to solve complex tasks by learning reusable skills thatexploit the compositional structure of the task to speed up learning. The option critic architecture successfully demonstrates a way to automate the learning of these skills while solving a specific task. However, this framework uses on-policy updates which makes it highly sample inefficient and impractical for solving control tasks with high dimensional state and action space. Additionally, this framework may not necessarily generate diverse skills and often collapses to learning a single skill in naive tasks. In this work, we show how to extend options the options framework to generate diverse maximum entropy options that specialize in different parts of state-action space. Experimental results show that our proposed framework enables the agent to learn to achieve higher rewards faster than vanilla options-critic, Hierarchical RL via advantage-weighted information maximization framework(AdInfoHRL), and state of the art algorithms like PPO and Soft Actor-Critic in many control tasks in addition to learning more distinguishable skills. <br/>
 
-[Report](https://github.com/elitalobo/Hierarchical-RL-Algorithms/blob/master/soc_report.pdf) <br/>
+[Report](https://drive.google.com/drive/folders/1u1ya2bddsguwhnHNpH3HPJ5aQHtRcEUS?usp=sharing) <br/>
 <p align="center">
   <img src="https://github.com/elitalobo/Hierarchical-RL-Algorithms/blob/master/maximum_entropy-option-critic/HalfCheetahBulletEnv-v0.png?raw=true" alt="Photo" style="width: 450px;"/> 
 </p>
