@@ -10,7 +10,8 @@ redirect_from:
 
 
 
-I am a Computer Science PhD student at University of New Hampshire. I am fortunate to be advised by Professor [Marek Petrik](https://marek.petrik.us/).  
+I am an incoming Computer Science PhD student at Massachusetts Amherst. I will be advised by Professor Yair Zick. 
+Prior to this, I worked as a graduate research assistant at University of New Hampshire for 1.5 years. I was fortunate to be advised by Professor [Marek Petrik](https://marek.petrik.us/) during this period.  
 
 My research interests are in the field of Reinforcement Learning, Machine Learning and Optimization. My research focus is on developing Batch RL algorithms that provide robustness against epistemic and/or aleatoric uncertainties. 
 My long term goal is to design practical RL algorithms that can solve real-world sequential decision-making problems using only logged data and expert knowledge. 
