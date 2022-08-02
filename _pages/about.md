@@ -18,5 +18,5 @@ My long term goal is to design practical RL algorithms that can solve real-world
 
 Before joining University of New Hampshire, I completed my Masters in Computer Science at **University of Massachusetts Amherst**. Prior to that, I worked as a Software Engineer at **Directi Web Technologies** and **Flipkart** for two years and obtained my BTech in Electronics and Communication Engineering from **NIT Durgapur**. 
 
-
+Please find my resume [here](http://elitalobo.github.io/files/elitalobo_cv.pdf).
 You can contact me by [email](loboelita@gmail.com). 
