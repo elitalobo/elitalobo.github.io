@@ -2,13 +2,13 @@
 layout: about
 title: about
 permalink: /
-subtitle: Senior Researcher @ Microsoft Research. Previously @ Google Brain, Google X, Twitter Cortex.
+subtitle: 3rd year PhD Student at University of Massachusetts Amherst
 
 
 
 profile:
   align: right
-  image: cris_profile.jpg
+  image: elitalobo.png
   image_circular: true # crops the image to make it circular
   # address: 
     # <p>555 your office number</p>
@@ -20,7 +20,20 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-Hi there! I am a Senior Researcher at Microsoft Research in the [AI4Science team](https://www.microsoft.com/en-us/research/lab/microsoft-research-ai4science/) where I am working at intersection of deep learning and partial differential equations (PDEs). On the ML side, my research spans a range of topics such as geometric & topological deep learning, graph neural networks and neural differential equations.
+Hi There! I am a 3rd year Computer Science PhD student at Massachusetts Amherst where I am advised by Dr. Yair Zick.
+My research interests are in **Trustworthy Machine Learning**, **Reinforcement Learning**, and **Optimization**. 
+My research centers on Trustworthy Machine Learning with a focus on efficient and fair algorithms that are robust to adversarial noise and uncertainty. 
+I am also interested in developing practical RL algorithms that leverage human feedback and expert knowledge to efficiently solve real-world sequential decision-making problems with limited data.
 
-Previously, I finished my PhD at the University of Cambridge, supervised by
-[Prof Pietro Liò](https://www.cl.cam.ac.uk/~pl219/) and supported by a [Microsoft Research PhD Fellowship](https://www.microsoft.com/en-us/research/academic-program/phd-fellowship/#!people) (2021). I've also spent significant time in industry as a research intern at Microsoft Research (2022), [Twitter Cortex](https://cortex.twitter.com/) (2021), Google Brain (2020), and as an AI Resident at [Google X](https://x.company/) (2019). In 2019, I graduated with distinction the MPhil in Advanced Computer Science at Cambridge with a Best MPhil Student Award. 
+I've also spent significant time in industry as a research intern at Microsoft Research (2024), and IBM Research (2021,2022,2023). 
+
+Before joining UMass Amherst, I worked as a graduate research assistant at the University of New Hampshire for 1.5 years. During this period, I was fortunate to be advised by Dr. Marek Petrik on several research problems in Reinforcement Learning.
+I completed my Masters in Computer Science at the **University of Massachusetts Amherst** in 2020 and obtained my BTech in Electronics and Communication Engineering from **NIT Durgapur** in 2016. I also worked as a Software Engineer at **Directi Web Technologies** and **Flipkart** from 2016 to 2018. 
+
+You can find my updated resume [here](http://elitalobo.github.io/files/elitalobo_cv.pdf).
+
+You can contact me by [email](loboelita@gmail.com). 
+
+
+
+
