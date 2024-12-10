@@ -10,7 +10,7 @@ redirect_from:
 
 
 
-Hi! I’m a third-year PhD student in Computer Science at the University of Massachusetts Amherst, where I’m fortunate to be advised by [Dr. Yair Zick](https://people.cs.umass.edu/~yzick/). My research focuses on **Trustworthy Reinforcement Learning (RL) and Machine Learning**, with a particular emphasis on developing practical, fair, and robust algorithms.
+Hi there! I’m a third-year PhD student in Computer Science at the University of Massachusetts Amherst, where I’m fortunate to be advised by [Dr. Yair Zick](https://people.cs.umass.edu/~yzick/). My research focuses on **Trustworthy Reinforcement Learning (RL) and Machine Learning**, with a particular emphasis on developing practical, fair, and robust algorithms.
 
 My PhD journey has spanned a diverse range of topics, including model misspecification in RL, fairness in RL, fair resource allocation under uncertainty, and robust feature hightlighting. Beyond these core areas, I’ve also delved into challenges in large language models (LLMs), such as investigating effects of fine-tuning on reasoning abilities, unlearning factual knowledge, and the robustness of alignment algorithms to noisy AI feedback.
 
