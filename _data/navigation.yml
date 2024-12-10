@@ -17,8 +17,8 @@ main:
   - title: "Projects"
     url: /projects/
         
-  - title: "Blogs"
-    url: /year-archive/
+#  - title: "Blogs"
+#    url: /year-archive/
     
   #- title: "CV/Bio"
   #  url: /cv/
