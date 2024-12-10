@@ -1,7 +1,8 @@
 ---
 title: "Fair and Welfare-Efficient Resource Allocation under Uncertainty"
 collection: publications
-date: 2024-05-24
-venue: 'Arxiv'
-paperurl: 'Under Review'
+date: 2024-12-10
+venue: 'The 37th Annual Conference on Neural Information Processing Systems, 2024'
+authors: 'Elita Lobo, Justin Payan, Cyrus Cousins, Yair Zick'
+paperurl: 'https://arxiv.org/pdf/2411.02654'
 ---

@@ -2,6 +2,7 @@
 title: "On Welfare-Centric Fair Reinforcement Learning"
 collection: publications
 date: 2024-08-11
-venue: 'Reinforcement Learning Conference 2024'
-paperurl: 'Coming soon'
+authors: 'Cyrus Cousins, Elita Lobo, Kavosh Asadi, Michael L. Littman'
+venue: 'The Reinforcement Learning Conference 2024 **(Outstanding Paper Award)**'
+paperurl: 'https://openreview.net/pdf?id=aWGtAqYBie'
 ---

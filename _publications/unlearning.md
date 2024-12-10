@@ -1,7 +1,10 @@
 ---
-title: "On Welfare-Centric Fair Reinforcement Learning"
+title: "Alternate Preference Optimization for Unlearning Factual Knowledge in Large Language
+Models"
 collection: publications
-date: 2024-08-11
-venue: 'Reinforcement Learning Conference 2024'
-paperurl: 'Coming soon'
+date: 2024-09-15
+authors: 'Anmol Mekala, Vineeth Dorna, Shreya Dubey, Abhishek Lalwani, David
+Koleczek, Mukund Rungta, Sadid Hasan, Elita Lobo'
+venue: 'The 31st International Conference on Computational Linguistics, 2024'
+paperurl: 'https://arxiv.org/pdf/2409.13474'
 ---
