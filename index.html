@@ -79,8 +79,6 @@ I am currently a 3rd-year Ph.D. student in the College of Information and Comput
 <a href="https://scholar.google.com/citations?user=E36xr7YAAAAJ&hl=en">Prof. Yair Zick</a> at <a href="https://people.cs.umass.edu/~yzick/people.html">FED</a>.
 <br> My research focuses on Trustworthy Reinforcement Learning (RL) and Machine Learning, with a particular emphasis on developing practical, fair, and robust algorithms.
 
-I've also gained substantial industry experience as a research intern. At IBM Research (New York), I worked across three summers on projects including meta-hyperparameter tuning in RL, behavior policy search for efficient risk estimation, and glossary matching using LLMs, under the guidance of Dr. Dharmashankar Subramanian and Dr. Nhan Pham. More recently, I interned at Microsoft Research (India), where I explored the robustness of LLM alignment algorithms.
-
 Before starting my PhD, I completed a Master's degree in Computer Science at UMass Amherst in 2020, during which I had the privilege of working with external collaborators, Dr. Marek Petrik and Dr. Hima Lakkaraju. I also spent two years in industry as a Software Engineer at Flipkart and Endurance International Group. I graduated from NIT Durgapur with a B.Tech in Electronics and Communication Engineering.
 
 
@@ -91,21 +89,26 @@ Before starting my PhD, I completed a Master's degree in Computer Science at UMa
 </p>
 <br> I care about developing efficient, interpretable models that improve how we aggregate and understand information. -->
 <h1 id="research">Research Areas</h1>
-
-
 <p>
 <b>Robust and Fair Decision Making Systems:</b> My PhD research centers on reinforcement learning and resource allocation under uncertainty, adversarial conditions, and fairness constraints. In <a href="https://arxiv.org/pdf/2011.14495">Soft-Robust Algorithms for Batch Reinforcement Learning</a>, I propose the soft-robust criterion as a principled alternative to the standard percentile criterion, which often results in overly conservative policies. I develop two approximate algorithms that demonstrate, both theoretically and empirically, more balanced and effective decision-making.
-Expanding on this, <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/1dec73169509c223220744b2c9b2df37-Abstract-Conference.html">Percentile Criterion Optimization in Offline Reinforcement Learning</a> introduces a Value-at-Risk-based dynamic programming approach to optimize robust policies without constructing explicit uncertainty sets. The method allows the learning of less conservative, uncertainty-aware policies. In <a href="https://proceedings.mlr.press/v180/lobo22a/lobo22a.pdf">Data Poisoning Attacks on Off-Policy Policy Evaluation Methods</a>, we present the first known data poisoning framework targeting off-policy evaluation. Using influence functions, I show how small, targeted data perturbations can significantly skew policy value estimates, underscoring the need for robust evaluation techniques.
-In <a href="https://arxiv.org/pdf/2411.02654">Fair and Welfare-Efficient Constrained Multi-Matchings under Uncertainty</a>, I address resource allocation when agent utilities are unknown, using both stochastic and robust optimization to balance fairness and efficiency. These methods are validated on real-world datasets, such as reviewer assignments. I also contributed to <a href="https://openreview.net/pdf?id=aWGtAqYBie">On Welfare-Centric Fair Reinforcement Learning</a>, where we introduce a framework in which an agent receives vector-valued rewards from multiple beneficiaries and optimizes a specified welfare function. The study shows that welfare-optimal policies are inherently stochastic and start-state dependent, and presents the E4 learner, which operates within an adversarial-fair learning framework to manage exploration and maintain welfare guarantees.
+Expanding on this, <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/1dec73169509c223220744b2c9b2df37-Abstract-Conference.html">Percentile Criterion Optimization in Offline Reinforcement Learning</a> introduces a Value-at-Risk-based dynamic programming approach to optimize robust policies without constructing explicit uncertainty sets. The method allows the learning of less conservative, uncertainty-aware policies.
+In <a href="https://proceedings.mlr.press/v180/lobo22a/lobo22a.pdf">Data Poisoning Attacks on Off-Policy Policy Evaluation Methods</a>, we present the first known data poisoning framework targeting off-policy evaluation. Using influence functions, I show how small, targeted data perturbations can significantly skew policy value estimates, underscoring the need for robust evaluation techniques.
+In <a href="https://arxiv.org/pdf/2411.02654">Fair and Welfare-Efficient Constrained Multi-Matchings under Uncertainty</a>, I address resource allocation when agent utilities are unknown, using both stochastic and robust optimization to balance fairness and efficiency. These methods are validated on a real-world reviewer assignment dataset.
 </p>
 
 <p>
-<b>Large Language Models (LLMs):</b> My research focuses on understanding and enhancing the reasoning abilities, fine-tuning behavior, and factual unlearning of large language models. In <a href="https://arxiv.org/abs/2411.15382">On the Impact of Fine-Tuning on Chain-of-Thought Reasoning</a>, I investigate how fine-tuning affects LLMs' reasoning capabilities. The study reveals that while fine-tuning improves task-specific performance, it can compromise the consistency and faithfulness of chain-of-thought reasoning across dataset, highlighting critical trade-offs between optimization and reasoning integrity.
-Currently, I am also developing counterfactual verifiers for mathematical and logical reasoning tasks, using counterfactual data augmentation and contrastive loss to improve their robustness.
-In <a href="https://arxiv.org/pdf/2309.11506">Matching Table Metadata with Business Glossaries Using Large Language Models</a>, I apply LLMs to the practical task of aligning enterprise metadata with business glossaries. This work demonstrates that LLMs can infer complex relationships between table column names and glossary descriptions without manual tuning, enabling scalable metadata alignment in restricted-access environments.
-As a contributor to the <a href="https://arxiv.org/pdf/2409.13474">Alternate Preference Optimization (AltPO)</a> project, I helped design a method for effective machine unlearning in LLMs. AltPO addresses the limitations of existing unlearning techniques, such as performance degradation and incoherent output, by combining negative feedback with in-domain positive examples, achieving more consistent unlearning and better overall model utility.
+<b>Large Language Models (LLM):</b> As an additional line of research, I have explored the reasoning capabilities, fine-tuning dynamics, and unlearning behavior of LLMs. In
+<a href="https://arxiv.org/abs/2411.15382" target="_blank">On the Impact of Fine-Tuning on Chain-of-Thought Reasoning</a>, I investigate how fine-tuning influences LLM reasoning. The study shows that while fine-tuning improves task-specific performance, it can reduce the consistency and faithfulness of chain-of-thought reasoning across datasets, highlighting trade-offs between optimization and reasoning integrity. I am also developing counterfactual verifiers for mathematical and logical reasoning tasks, using counterfactual data augmentation and contrastive loss to enhance robustness.
+In
+<a href="https://arxiv.org/pdf/2309.11506" target="_blank">Matching Table Metadata with Business Glossaries Using Large Language Models</a>, I apply LLMs to align enterprise metadata with business glossaries. This work demonstrates that LLMs can infer complex relationships between table column names and glossary descriptions without manual tuning, enabling scalable metadata alignment in restricted-access environments.
 </p>
 
+<p>
+<b>Fairness-Centric and Interpretable Machine Learning:</b> I also contributed to
+<a href="https://openreview.net/pdf?id=aWGtAqYBie" target="_blank">On Welfare-Centric Fair Reinforcement Learning</a>, where we introduce a framework in which an agent receives vector-valued rewards from multiple beneficiaries and optimizes a specified welfare function. We show that welfare-optimal policies are inherently stochastic and start-state dependent, and present the E4 learner, which operates within an adversarial-fair learning framework to manage exploration and maintain welfare guarantees.
+Additionally, I contributed to
+<a href="https://ojs.aaai.org/index.php/AAAI/article/view/28986" target="_blank">Axiomatic Aggregations of Abductive Explanations</a>, which addresses the challenge of multiple valid abductive explanations per data point by proposing aggregation techniques that generate feature importance scores. Grounded in cooperative game theory (via power indices) and causal strength measures, these techniques are axiomatically characterized to meet desirable interpretability properties. Unlike popular methods such as SHAP and LIME, the proposed explanations exhibit improved robustness against adversarial perturbations.
+</p>
 
 
 
@@ -217,7 +220,7 @@ As a contributor to the <a href="https://arxiv.org/pdf/2409.13474">Alternate Pre
   <b>Flipkart, Bangalore, India</b> <i>Aug 2017 - Jul 2018</i>
   <ul>
     <li>SOFTWARE ENGINEER</li>
-    <li>Built DL model to detect anomalous payouts in accounting systems.</li>
+    <li>Built Deep Learning model to detect anomalous payouts in accounting systems.</li>
     <li>Developed stock ledger generator API and invoice register API.</li>
     <li>Provided on-call support for inventory valuation and warehouse transfer systems.</li>
   </ul>
@@ -341,13 +344,17 @@ As a contributor to the <a href="https://arxiv.org/pdf/2409.13474">Alternate Pre
     <b>PhD Applicant Support Program:</b> Mentored underrepresented students applying to graduate school.
     <br><i>2023, 2024</i>
   </li>
-  <li>
-    <b>CS 696DS Industry Mentorship Program:</b> Guided master's students through an NLP-focused research project.
-    <br><i>UMass Amherst, 2024-2025</i>
-  </li>
-</ul>
 
-
+    <li>
+  <b>CS 696DS Industry Mentorship Program</b> - <i>Primary PhD Mentor</i><br>
+  <i>UMass Amherst, 2025</i><br>
+  Mentored master's students through an NLP-focused research project <b>Alternate Preference Optimization (AltPO)</b> in collaboration with Microsoft. Guided the team from project conception to publication. Our work was published at <b>COLING 2024</b> and is available on <a href="https://arxiv.org/abs/2409.13474" target="_blank">arXiv (2409.13474)</a>.
+</li>
+    <li>
+<b>CS 696DS Industry Mentorship Program</b> - <i>PhD Mentor</i><br>
+  <i>UMass Amherst, 2024–2025</i><br>
+  Mentored master's students through an NLP-focused research project on multi-hop finance QA generation for RAG evaluation, in collaboration with <b>Goldman Sachs</b>.
+</li>
 <h1 id="awards">Awards & Achievements</h1>
 <ul>
   <li>
