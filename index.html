@@ -1,0 +1,402 @@
+<html><head><link href="https://fonts.googleapis.com/css2?family=Mukta&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body
+{
+ margin:0 auto;
+ text-align:left;
+ width:80%;
+ padding: 5 0;
+  font-family: 'Mukta', sans-serif;
+ background-color:#fff;
+}
+.img2 {
+  float: left;
+}
+.img1 {
+  float: right;
+}
+.clearfix {
+  overflow: auto;
+}
+.company-logo {
+      margin: 10px; /* Adjust the value as needed */
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .education-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .education-container img {
+      margin-right: 20px;
+    }
+</style>
+
+ 
+  <title>Elita Lobo </title>
+  </head>
+<body>
+
+<div class="navbar">
+  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#publications">Publications</a>
+  <a href="#skills">Skills</a>
+  <a href="./cv.pdf" target="_blank">CV</a> <!-- Update the href with the actual path to your CV -->
+</div>
+
+<div class="clearfix">
+  <img class="img2" src="profile_pic.jpg" alt="photo" height="250">
+  <h1>&nbsp;Elita Lobo </h1>
+  &nbsp; PhD Student
+  <br>&nbsp; University of Massachusetts Amherst
+  <br>&nbsp; elobo@umass.edu
+  <br>&nbsp; <a href="https://scholar.google.com/citations?user=E36xr7YAAAAJ&hl=en"> Google Scholar </a>
+  <br>&nbsp; <a href="https://github.com/elitalobo"> Github </a>
+ <br>&nbsp; <a href="https://www.linkedin.com/in/elita-lobo-45882373/"> LinkedIn </a>
+</div>
+
+<h1> Bio </h1>
+
+I am currently a 3rd-year Ph.D. student in the College of Information and Computer Sciences at UMass Amherst, working with
+<a href="https://scholar.google.com/citations?user=E36xr7YAAAAJ&hl=en">Prof. Yair Zick</a> at <a href="https://people.cs.umass.edu/~yzick/people.html">FED</a>.
+<br> My research focuses on Trustworthy Reinforcement Learning (RL) and Machine Learning, with a particular emphasis on developing practical, fair, and robust algorithms.
+
+I've also gained substantial industry experience as a research intern. At IBM Research (New York), I worked across three summers on projects including meta-hyperparameter tuning in RL, behavior policy search for efficient risk estimation, and glossary matching using LLMs, under the guidance of Dr. Dharmashankar Subramanian and Dr. Nhan Pham. More recently, I interned at Microsoft Research (India), where I explored the robustness of LLM alignment algorithms.
+
+Before starting my PhD, I completed a Master's degree in Computer Science at UMass Amherst in 2020, during which I had the privilege of working with external collaborators, Dr. Marek Petrik and Dr. Hima Lakkaraju. I also spent two years in industry as a Software Engineer at Flipkart and Endurance International Group. I graduated from NIT Durgapur with a B.Tech in Electronics and Communication Engineering.
+
+
+
+<!-- <h2> Research Interests </h2>
+<p>
+  • Representation Learning • Information Retrieval • Recommendation Systems • Natural Language Processing
+</p>
+<br> I care about developing efficient, interpretable models that improve how we aggregate and understand information. -->
+<h1 id="research">Research Areas</h1>
+
+
+<p>
+<b>Robust and Fair Decision Making Systems:</b> My PhD research centers on reinforcement learning and resource allocation under uncertainty, adversarial conditions, and fairness constraints. In <a href="https://arxiv.org/pdf/2011.14495">Soft-Robust Algorithms for Batch Reinforcement Learning</a>, I propose the soft-robust criterion as a principled alternative to the standard percentile criterion, which often results in overly conservative policies. I develop two approximate algorithms that demonstrate, both theoretically and empirically, more balanced and effective decision-making.
+Expanding on this, <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/1dec73169509c223220744b2c9b2df37-Abstract-Conference.html">Percentile Criterion Optimization in Offline Reinforcement Learning</a> introduces a Value-at-Risk-based dynamic programming approach to optimize robust policies without constructing explicit uncertainty sets. The method allows the learning of less conservative, uncertainty-aware policies. In <a href="https://proceedings.mlr.press/v180/lobo22a/lobo22a.pdf">Data Poisoning Attacks on Off-Policy Policy Evaluation Methods</a>, we present the first known data poisoning framework targeting off-policy evaluation. Using influence functions, I show how small, targeted data perturbations can significantly skew policy value estimates, underscoring the need for robust evaluation techniques.
+In <a href="https://arxiv.org/pdf/2411.02654">Fair and Welfare-Efficient Constrained Multi-Matchings under Uncertainty</a>, I address resource allocation when agent utilities are unknown, using both stochastic and robust optimization to balance fairness and efficiency. These methods are validated on real-world datasets, such as reviewer assignments. I also contributed to <a href="https://openreview.net/pdf?id=aWGtAqYBie">On Welfare-Centric Fair Reinforcement Learning</a>, where we introduce a framework in which an agent receives vector-valued rewards from multiple beneficiaries and optimizes a specified welfare function. The study shows that welfare-optimal policies are inherently stochastic and start-state dependent, and presents the E4 learner, which operates within an adversarial-fair learning framework to manage exploration and maintain welfare guarantees.
+</p>
+
+<p>
+<b>Large Language Models (LLMs):</b> My research focuses on understanding and enhancing the reasoning abilities, fine-tuning behavior, and factual unlearning of large language models. In <a href="https://arxiv.org/abs/2411.15382">On the Impact of Fine-Tuning on Chain-of-Thought Reasoning</a>, I investigate how fine-tuning affects LLMs' reasoning capabilities. The study reveals that while fine-tuning improves task-specific performance, it can compromise the consistency and faithfulness of chain-of-thought reasoning across dataset, highlighting critical trade-offs between optimization and reasoning integrity.
+Currently, I am also developing counterfactual verifiers for mathematical and logical reasoning tasks, using counterfactual data augmentation and contrastive loss to improve their robustness.
+In <a href="https://arxiv.org/pdf/2309.11506">Matching Table Metadata with Business Glossaries Using Large Language Models</a>, I apply LLMs to the practical task of aligning enterprise metadata with business glossaries. This work demonstrates that LLMs can infer complex relationships between table column names and glossary descriptions without manual tuning, enabling scalable metadata alignment in restricted-access environments.
+As a contributor to the <a href="https://arxiv.org/pdf/2409.13474">Alternate Preference Optimization (AltPO)</a> project, I helped design a method for effective machine unlearning in LLMs. AltPO addresses the limitations of existing unlearning techniques, such as performance degradation and incoherent output, by combining negative feedback with in-domain positive examples, achieving more consistent unlearning and better overall model utility.
+</p>
+
+
+
+
+
+<h1 id="education">Education</h1>
+<div class="education-container">
+  <img src="https://people.cs.umass.edu/~nmonath/UMASS.jpg" style="height: 100">
+  <div>
+    <b>P.h.D. in Computer Science</b>
+    <br> University of Massachusetts Amherst.
+    <br> Started PhD in Fall 2022.
+    <br> Robust Decision Making Systems. Supervised by <a href="https://scholar.google.com/citations?user=m0PW6DQAAAAJ&hl=en">Prof. Yair Zick</a>.
+  </div>
+</div>
+<div class="education-container">
+  <img src="https://people.cs.umass.edu/~nmonath/UMASS.jpg" style="height: 100">
+  <div>
+    <b>Master in Computer Science</b>
+    <br> University of Massachusetts Amherst. 2018.
+    <br> Thesis: Soft Robust Algorithms for Batch RL.
+  </div>
+</div>
+<div class="education-container">
+  <img src="NIT_Durgapur_Logo.svg" style="height: 100">
+  <div>
+    <b>Bachelor of Technology (B.Tech) in Electronics and Communications Engineering </b>
+    <br> National Institute of Technology, Durgapur B.E. 2016.
+  </div>
+</div>
+
+
+<h1 id="experience"> Experience </h1>
+<img class="company-logo" src="https://mailmeteor.com/logos/assets/PNG/Microsoft_Logo_256px.png" style="height: 100">
+
+  <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" style="height: 100">
+
+  <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" style="height: 100">
+
+  <img class="company-logo" src="amazon-logo.svg" style="height: 100">
+
+  <img class="company-logo" src="flipkart.jpeg" style=enecccfnnclhlftffirjkrhgknvrbikegfbrttktdtci
+"height: 100">
+
+  <img class="company-logo" src="harvard-university.svg" style="height: 100">
+
+  <img class="company-logo" src="https://i.ibb.co/YFLsfht3/9b8e4b64-5b13-4f3d-bb35-fa87644f2714.png" style="height: 100">
+
+
+
+<ol>
+  <li>
+  <b>Amazon (Central ML Team), Seattle</b> <i>Spring 2024</i>
+  <ul>
+    <li>RESEARCH INTERN</li>
+    <li>Developed robust and interpretable web-browsing agents for shopping tasks.</li>
+  </ul>
+</li>
+
+<li>
+  <b>Harvard Business School, MA</b> <i>Summer 2024</i>
+  <ul>
+    <li>RESEARCH INTERN</li>
+    <li>Investigated the effects of fine-tuning on reasoning abilities of Large Language Models (LLMs).</li>
+  </ul>
+</li>
+
+<li>
+  <b>Microsoft Research, India</b> <i>Summer 2023</i>
+  <ul>
+    <li>RESEARCH INTERN, MENTORS - GAURAV SINHA, NAGARAJAN NATARAJAN</li>
+    <li>Developed methods to improve robustness of alignment algorithms like DPO for Small Language Models (SLMs).</li>
+  </ul>
+</li>
+
+<li>
+  <b>IBM Research, Yorktown Heights, NY</b> <i>Summer 2023</i>
+  <ul>
+    <li>RESEARCH INTERN</li>
+    <li>Developed novel methods that leverage LLMs and human feedback for accurate metadata-to-business-glossary matching.</li>
+    <li>Fine-tuned LLMs using RLHF with contrastive loss to improve matching accuracy.</li>
+  </ul>
+</li>
+
+<li>
+  <b>IBM Watson, Yorktown Heights, NY</b> <i>Summer 2022</i>
+  <ul>
+    <li>RESEARCH INTERN</li>
+    <li>Designed novel algorithms for efficient hyperparameter tuning in reinforcement learning.</li>
+  </ul>
+</li>
+
+<li>
+  <b>IBM Watson, Yorktown Heights, NY</b> <i>Summer 2021</i>
+  <ul>
+    <li>RESEARCH INTERN</li>
+    <li>Integrated Off-Policy Policy Evaluation algorithms into an automated optimization framework.</li>
+    <li>Developed a variance-minimizing technique for risk estimators using influence functions from robust statistics.</li>
+  </ul>
+</li>
+
+<li>
+  <b>Harvard Business School, MA</b> <i>Winter 2020-2021</i>
+  <ul>
+    <li>RESEARCH INTERN</li>
+    <li>Developed a novel data-poisoning attack framework to analyze the sensitivity of off-policy evaluation methods.</li>
+  </ul>
+</li>
+</ol>
+<li>
+  <b>Flipkart, Bangalore, India</b> <i>Aug 2017 - Jul 2018</i>
+  <ul>
+    <li>SOFTWARE ENGINEER</li>
+    <li>Built DL model to detect anomalous payouts in accounting systems.</li>
+    <li>Developed stock ledger generator API and invoice register API.</li>
+    <li>Provided on-call support for inventory valuation and warehouse transfer systems.</li>
+  </ul>
+</li>
+<li>
+  <b>Endurance International Group, Bangalore, India</b> <i>Jul 2016 - Aug 2017</i>
+  <ul>
+    <li>SOFTWARE ENGINEER</li>
+    <li>Created APIs for web orchestration, smart search, and session management.</li>
+    <li>Developed ML system to detect parked domains.</li>
+    <li>Built Imagio: a fast keyword- and color-filtered image search tool.</li>
+  </ul>
+</li>
+
+
+<h1 id="publications"> Publications </h1>
+<p>Please visit my <a href="https://scholar.google.com/citations?user=E36xr7YAAAAJ&hl=en">Google Scholar</a> page for an updated list of publications.</p>
+<ol>
+    <li>
+        <b>Elita Lobo</b>, Nhan Pham, Dharmashankar Subramanian, Tejaswini Pedapati.
+        <i>A Metahyperparameter Tuning Framework for Reinforcement Learning</i>.
+        <br><b><u>In-Submission:</u> Patents 2023</b> - <em>Reinforcement Learning</em>
+        <br> <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=E36xr7YAAAAJ&sortby=pubdate&citation_for_view=E36xr7YAAAAJ:LkGwnXOMwfcC" target="_blank">[Under Review]</a>
+    </li>
+    <li>
+        <b>Elita Lobo</b>, Nhan Pham, Oktie Hassanzadeh, Dharmashankar Subramanian, Nandana Sampath Mihindukulasooriya, Long Vu.
+        <i>A novel system for metadata to glossary matching in data lakes using human feedback and generative models</i>.
+        <br><b><u>In-Submission:</u> Patents 2024</b> - <em>Data Systems</em>
+    </li>
+    <li>
+        <b>Elita Lobo</b>, Chirag Agarwal, Hima Lakkaraju.
+        <i>On the Impact of Fine-Tuning on Chain-of-Thought Reasoning in LLMs</i>.
+        <br><b><u>NACCL 2025</u></b> - <em>Large Language Models</em>
+        <br> <a href="https://arxiv.org/abs/2411.15382" target="_blank">[Paper]</a>
+    </li>
+    <li>
+        Anmol Mekala, Vineeth Dorna, Shreya Dubey, Abhishek Lalwani, David Koleczek, Mukund Rungta, Sadid Hasan, <b>Elita Lobo</b><sup>*</sup>.
+        <i>Alternate Preference Optimization for Unlearning Factual Knowledge in Large Language Models</i>.
+        <br><b><u>COLING 2024</u></b> - <em>Knowledge Unlearning</em>
+        <br> <a href="https://arxiv.org/pdf/2409.13474" target="_blank">[Paper]</a>
+    </li>
+    <li>
+        <b>Elita Lobo*</b>, Justin Payan*, Cyrus Cousins, Yair Zick.
+        <i>Fair and Welfare-Efficient Resource Allocation under Uncertainty</i>.
+        <br><b><u>NeurIPS 2024</u></b> - <em>Fairness & Optimization</em>
+        <br> <a href="https://arxiv.org/pdf/2411.02654" target="_blank">[Paper]</a>
+    </li>
+    <li>
+        Cyrus Cousins, <b>Elita Lobo</b>, Kavosh Asadi, Michael L. Littman.
+        <i>On Welfare-Centric Fair Reinforcement Learning</i>.
+        <br><b><u>RLC 2024</u></b> - <em>Reinforcement Learning</em>
+        <br><b><u>Award:</u></b> Outstanding Paper
+        <br> <a href="https://openreview.net/pdf?id=aWGtAqYBie" target="_blank">[Paper]</a>
+    </li>
+    <li>
+        Vignesh Viswanathan, <b>Elita Lobo</b>, Yacine Izza, Gagan Biradar, Yair Zick.
+        <i>Axiomatic Aggregations of Abductive Explanations</i>.
+        <br><b><u>AAAI 2023</u></b> - <em>Explainable AI</em>
+        <br> <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28986" target="_blank">[Paper]</a>
+    </li>
+    <li>
+        <b>Elita Lobo</b>, Cyrus Cousins, Marek Petrik, Yair Zick.
+        <i>Percentile Criterion Optimization in Offline Reinforcement Learning</i>.
+        <br><b><u>NeurIPS 2023</u></b> - <em>Offline RL</em>
+        <br> <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/1dec73169509c223220744b2c9b2df37-Abstract-Conference.html" target="_blank">[Paper]</a>
+    </li>
+    <li>
+        <b>Elita Lobo</b>, Harvineet Singh, Cynthia Rudin, Himabindu Lakkaraju.
+        <i>Data Poisoning Attacks on Off-Policy Policy Evaluation Methods</i>.
+        <br><b><u>UAI 2022</u></b> - <em>Robustness in RL</em>
+        <br><b><u>Award:</u></b> Top 5%
+        <br> <a href="https://proceedings.mlr.press/v180/lobo22a/lobo22a.pdf" target="_blank">[Paper]</a>
+    </li>
+    <li>
+        <b>Elita Lobo</b>, Oktie Hassanzadeh, Nhan Pham, Nandana Mihindukulasooriya, Dharmashankar Subramanian, Horst Samulowitz.
+        <i>Matching table metadata with business glossaries using large language models</i>.
+        <br><b><u>Ontology Matching Workshop 2023</u></b> - <em>Data Integration</em>
+        <br> <a href="https://arxiv.org/pdf/2309.11506" target="_blank">[Paper]</a>
+    </li>
+    <li>
+        <b>Elita Lobo</b>, Mohammad Ghavamzadeh, Marek Petrik.
+        <i>Soft-robust Algorithms for Batch Reinforcement Learning</i>.
+        <br><b><u>IJCAI R2AW Workshop 2021</u></b> - <em>Robust RL</em>
+        <br> <a href="https://arxiv.org/pdf/2011.14495" target="_blank">[Paper]</a>
+    </li>
+    <li>
+        <b>Elita Lobo</b>, Yash Chandak, Dharmashankar Subramanian, Josiah Hanna, Marek Petrik.
+        <i>Behavior Policy Search for Risk Estimators in RL</i>.
+        <br><b><u>NeurIPS Safe-RL Workshop 2021</u></b> - <em>Safe RL</em>
+        <br> <a href="https://pages.cs.wisc.edu/~jphanna/papers/lobo2021behavior.pdf" target="_blank">[Paper]</a>
+    </li>
+    <li>
+        <b>Elita Lobo</b>, Harvineet Singh, Cynthia Rudin, Himabindu Lakkaraju.
+        <i>Data Poisoning Attacks on Off-Policy Policy Evaluation Methods (Workshop version)</i>.
+        <br><b><u>ICLR PAIR2Struct Workshop 2022</u></b> - <em>Security in ML</em>
+        <br><a href="https://arxiv.org/abs/2404.04714" target="_blank">[Paper]</a>
+    </li>
+</ol>
+
+
+
+<h1 id="skills">Skills</h1>
+<ul>
+  <li><b>Programming Languages:</b> Python, C++, Java</li>
+  <li><b>Libraries & Frameworks:</b> MySQL, PyTorch, TensorFlow, Transformers,  Spring Boot, ElasticSearch</li>
+  <li><b>Research Areas:</b> Machine Learning, Reinforcement Learning, Convex Optimization, Natural Language Processing</li>
+</ul>
+
+
+<h1 id="software">Published Software</h1>
+<ul>
+  <li><a href="https://github.com/mynaramana/ceph" target="_blank">Ceph</a></li>
+  <li><a href="https://github.com/elitalobo/DOPE.git" target="_blank">DOPE Framework</a></li>
+  <li><a href="https://github.com/elitalobo/aggrxp.git" target="_blank">Aggrxp</a></li>
+</ul>
+
+<h1 id="mentorship">Mentorship Experience</h1>
+<ul>
+  <li>
+    <b>PhD Applicant Support Program:</b> Mentored underrepresented students applying to graduate school.
+    <br><i>2023, 2024</i>
+  </li>
+  <li>
+    <b>CS 696DS Industry Mentorship Program:</b> Guided master's students through an NLP-focused research project.
+    <br><i>UMass Amherst, 2024-2025</i>
+  </li>
+</ul>
+
+
+<h1 id="awards">Awards & Achievements</h1>
+<ul>
+  <li>
+    <b>Graduate Scholarship:</b> Awarded the Anuradha and Hanuma Kodavalla Graduate Scholarship in Computer Science.
+    <br><i>UMass Amherst, 2023</i> - $10,000
+  </li>
+  <li>
+    <b>Fellowship:</b> Recipient of the UNH CEPS Graduate Fellowship.
+    <br><i>University of New Hampshire, 2020</i>
+  </li>
+  <li>
+    <b>AI Fellowship:</b> Recipient of the Robin Popplestone Fellowship in Robotics and Artificial Intelligence.
+    <br><i>UMass Amherst, 2019</i> - $5,000
+  </li>
+  <li>
+    <b>1st Place:</b> Hackday 10 (Marketplace Category) at Flipkart.
+    <br><i>Flipkart, 2018</i>
+  </li>
+  <li>
+    <b>Top 1%:</b> 99 percentile in All India Engineering Entrance Exam (State Rank 9).
+    <br><i>India, 2012</i>
+  </li>
+  <li>
+    <b>Top Rank:</b> State Rank 11 (99.9 percentile) in Goa Engineering Entrance Exam.
+    <br><i>India, 2012</i>
+  </li>
+</ul>
+
+<h1 id="teaching">Teaching Experience</h1>
+<ul>
+  <li>
+    <b>Teaching Assistant:</b> Supported instruction and grading for core Computer Science courses, including:
+    <br><em>Operating Systems (CS377, Fall 2018)</em>,
+    <em>Reasoning under Uncertainty (CS240, Spring 2019)</em>,
+    <em>Numerical Optimization (CS590OP, Fall 2019)</em>,
+    <em>Convex Optimization (CS690OP, Spring 2020)</em>.
+    <br><i>University of Massachusetts Amherst</i>
+  </li>
+</ul>
+
+<!-- <h1> News </h1>
+ 2020 September - Our paper on improving indentifiability on Box Embeddings got accepted at Neurips 2020.
+ <br> 2020 August - Awarded the W. Bruce Croft Graduate Scholarship in Computer Science, UMass Amherst.
+ <br> 2020 March - Paper got accepted in AKBC 2020.
+ <br> 2019 September - Started my PhD in UMass Amherst with <a href="https://people.cs.umass.edu/~mccallum/"> Professor Andrew McCallum</a>.
+ <br> 2018 Nov - Presented two papers on temporal information processing in EMNLP 2018 in Brussels, Belgium. -->
+
+
+
+
+
+</body></html>
