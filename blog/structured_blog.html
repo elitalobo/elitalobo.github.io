@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Human Problem-Solving to Hierarchical Planning-Based Web Agents – Elita Lobo</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 740px; margin: 60px auto; padding: 0 20px; color: #222; line-height: 1.8; }
+    nav { margin-bottom: 40px; }
+    nav a { margin-right: 16px; color: #555; text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { color: #000; }
+    h1 { font-size: 1.9rem; line-height: 1.3; margin-bottom: 8px; }
+    h2 { font-size: 1.25rem; margin-top: 44px; border-bottom: 1px solid #eee; padding-bottom: 6px; }
+    h3 { font-size: 1.05rem; margin-top: 28px; }
+    .meta { color: #888; font-size: 0.9rem; margin-bottom: 36px; }
+    .meta a { color: #1a0dab; text-decoration: none; }
+    .meta a:hover { text-decoration: underline; }
+    p { margin: 16px 0; }
+    strong { font-weight: bold; }
+    figure { margin: 32px 0; text-align: center; }
+    figure img { max-width: 100%; border: 1px solid #ddd; border-radius: 4px; }
+    figcaption { font-size: 0.82rem; color: #666; margin-top: 8px; font-style: italic; }
+    video { display: block; margin: 32px auto; max-width: 100%; border-radius: 4px; }
+    .links { margin-top: 48px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.95rem; }
+    .links a { color: #1a0dab; margin-right: 20px; text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav><a href="../index.html">← Home</a></nav>
+
+  <h1>From Human Problem-Solving to Hierarchical Planning-Based Web Agents</h1>
+  <div class="meta">
+    March 2026 &nbsp;·&nbsp;
+    <a href="https://arxiv.org/abs/2603.05294" target="_blank">arXiv:2603.05294</a>
+  </div>
+
+  <h2>Motivation</h2>
+  <p>
+    Imagine you need to find three ergonomic office chairs priced under $400, each from a distinct brand, with specific lumbar support and adjustable armrest requirements. You would probably start with a broad search, scan a few results, filter by price, compare options across multiple tabs, backtrack when something does not fit, and gradually narrow down until all three slots are filled. The whole process is fluid, structured, and remarkably robust to dead ends.
+  </p>
+  <p>
+    Now give the same task to a state-of-the-art LLM-based web agent. It will likely find one chair, maybe two, then either declare the task complete or give up. Not because it cannot read a product page, but because it lacks any mechanism for tracking what it has already found, verifying that all constraints are satisfied, or recovering when a search branch fails.
+  </p>
+  <p>
+    This gap is the problem StructuredAgent is designed to close.
+  </p>
+  <p>
+    In 1972, Newell and Simon characterized human problem-solving as heuristic search coupled with means-ends analysis. They described complex tasks as recursively decomposed into subproblems, with alternative strategies held in parallel and failures met with backtracking rather than abandonment. That characterization offers a precise diagnosis of what current web agents are missing. The rest of this post explains what we built to address it.
+  </p>
+
+  <video width="100%" controls>
+    <source src="../Amazon_Video_effects_wt_3.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <h2>Why Current Web Agents Fail</h2>
+  <p>Most failures in existing web agents trace back to four specific limitations, each corresponding to a cognitive capability that humans exercise naturally.</p>
+  <p>
+    <strong>Flat reasoning without hierarchical decomposition.</strong> Humans organize complex tasks into structured hierarchies. We break goals into subgoals, track progress at each level, explore alternatives when needed, and backtrack when a path closes off. Current agents struggle on both fronts. They generate shallow, poorly structured decompositions and cannot reliably follow multi-level plans over long horizons. As tasks extend across dozens of steps, agents lose track of subgoal completion, fail to backtrack when branches fail, and lack the structured memory to maintain coherence across the whole plan.
+  </p>
+  <p>
+    <strong>Memorylessness across browsing steps.</strong> A single web page can exceed twenty thousand tokens of HTML. Most agents operate on only the current page and a compressed action history, which means a promising product encountered five pages earlier is effectively lost. Humans maintain a running mental inventory of alternatives throughout a search.
+  </p>
+  <p>
+    <strong>Silent failure without recovery.</strong> When a strategy fails, humans naturally step back and try a different approach. A filter that returns no results, a page that loads incorrectly, a product that is out of stock: each of these prompts a human to adapt. Most agents either retry the same failed action or abandon the task entirely after a few unsuccessful attempts.
+  </p>
+  <p>
+    <strong>Greedy termination without constraint verification.</strong> When a task requires satisfying multiple constraints simultaneously, agents tend to declare success upon finding any candidate, without checking that all user-specified requirements are met. This produces partial or incorrect results, particularly on tasks with several concurrent conditions.
+  </p>
+
+  <figure>
+    <img src="images/example.png" alt="AgentOccam vs StructuredAgent on a Pinterest task" />
+    <figcaption>AgentOccam vs StructuredAgent on a Pinterest task: AgentOccam terminates its search prematurely when it fails to explore the third trend. StructuredAgent successfully retrieves items for all three trending women's ethnic wear styles.</figcaption>
+  </figure>
+
+  <h2>AND/OR Trees: A Classical Formalism Revisited</h2>
+  <p>Newell and Simon's framework inspired a formal representation in AI known as AND/OR trees. The structure consists of three node types.</p>
+  <p>
+    <strong>AND nodes</strong> represent conjunctive subgoals. All children must succeed for the parent to succeed. Completing a shopping task, for instance, requires searching for products, evaluating candidates, and recording the final selection.
+  </p>
+  <p>
+    <strong>OR nodes</strong> represent alternative strategies. The parent succeeds as soon as any child succeeds. When evaluating candidates, the agent might try filtering by price, browsing a category page, or refining the search query.
+  </p>
+  <p>
+    <strong>ACTION nodes</strong> are leaf nodes corresponding to concrete browser operations such as typing a query, clicking a link, scrolling, or navigating back.
+  </p>
+  <p>
+    This formalism captures hierarchical decomposition with built-in fallback reasoning. Researchers studied it extensively in classical AI, but confined its use to clean, fully observable domains such as theorem proving and game playing. Dynamically constructing such trees for the partially observable, stochastic, and high-dimensional environment of real web browsing is a substantially harder problem.
+  </p>
+
+  <h2>StructuredAgent</h2>
+  <p>
+    Large language models make AND/OR trees viable for web tasks today. LLMs excel as local decision-makers: they interpret raw HTML, generate plausible subgoals, and evaluate whether an objective has been met. What they cannot do reliably is manage the global structure of a plan spanning dozens of steps.
+  </p>
+  <p>
+    StructuredAgent exploits this asymmetry through a clear separation of responsibilities. The framework manages the tree, handling construction, traversal, backtracking, and pruning. The LLM handles only well-scoped local operations: expanding a node into subgoals, selecting an action, checking whether an objective was achieved, or repairing a failed subtree. No single LLM call needs to reason about the entire plan.
+  </p>
+
+  <figure>
+    <img src="images/framework.png" alt="StructuredAgent architecture overview" />
+    <figcaption>Figure 4: StructuredAgent architecture overview.</figcaption>
+  </figure>
+
+  <h3>Dynamic Tree Construction and Traversal</h3>
+  <p>
+    The agent constructs its AND/OR tree online during task execution using a modified depth-first search. Each node on the search stack carries one of three execution states.
+  </p>
+  <p>
+    In the <strong>Entering</strong> state, the node has not yet been processed. The agent invokes the LLM to determine its type and generate children. In the <strong>Exiting</strong> state, the node's children have been processed and the agent evaluates whether the node's objective has been satisfied. In the <strong>Failed</strong> state, execution or completion checking has failed, the agent attempts repair and, if unsuccessful, prunes the node and propagates failure upward.
+  </p>
+  <p>
+    Unlike standard depth-first search, nodes may be revisited multiple times as the tree evolves through pruning and revision. Six status values track this lifecycle: Unvisited, Visited, Success, Fail, Pruned, and Deleted.
+  </p>
+
+  <figure>
+    <img src="images/dfs.png" alt="Node state transitions during iterative modified greedy depth-first search" />
+    <figcaption>Illustration of node state transitions during iterative modified greedy depth-first search on an AND/OR tree. Unlike traditional depth-first search, nodes may be revisited and repeatedly transition through Entering, Exiting, and Failed states.</figcaption>
+  </figure>
+
+  <h3>Failure Propagation and Recovery</h3>
+  <p>
+    Failure handling is central to the framework's robustness. When an ACTION node fails, the framework prunes it. If the node belongs to an AND node, the framework deletes the remaining unexecuted siblings and propagates failure to the parent. The parent then attempts repair by generating new subgoals within a revision budget. If repair is exhausted, the framework prunes the entire subtree and continues propagating failure upward.
+  </p>
+  <p>
+    For OR nodes, the agent first checks for remaining untried alternatives. If alternatives exist, it selects the next most promising child. Otherwise, it attempts repair or prunes the node.
+  </p>
+
+  <h3>Five Core Operations</h3>
+  <figure>
+    <img src="images/operations.png" alt="Primary operations used to construct and maintain the AND/OR tree structure" />
+    <figcaption>Overview of the primary operations used to construct and maintain the AND/OR tree structure.</figcaption>
+  </figure>
+  <p>
+    The tree is maintained through five operations, each implemented as a scoped LLM call. <strong>Node Expansion</strong> determines node type and generates children. <strong>Node Repair</strong> revises failed nodes by proposing new children or recommending pruning. <strong>Global Tree Update</strong> prunes irrelevant branches and refines node descriptions as new information is acquired. <strong>Node Completion Check</strong> evaluates whether a node's objective has been achieved. The <strong>Observation Summarizer</strong> condenses raw HTML into task-relevant summaries that fit within the LLM's context budget.
+  </p>
+
+  <h3>Structured Memory</h3>
+  <p>
+    For information-seeking tasks that require identifying items satisfying multiple constraints, StructuredAgent includes a Structured Memory module. Rather than maintaining unstructured notes, the module organizes candidate entities in a dynamic table. Each row represents a candidate item and columns track individual constraints and their satisfaction status. The schema accommodates new constraints as the agent encounters them during exploration.
+  </p>
+  <p>
+    During planning, the module retrieves the top-K candidates satisfying the most constraints to guide subsequent actions, reducing redundant exploration and improving constraint satisfaction across the full task.
+  </p>
+
+  <figure>
+    <img src="images/structured_memory.png" alt="Structured Memory used to track candidate solutions" />
+    <figcaption>Example of Structured Memory used to track candidate solutions during information-seeking tasks.</figcaption>
+  </figure>
+
+  <h2>Experimental Results</h2>
+  <p>
+    We evaluate StructuredAgent on three benchmarks: a custom set of sixty complex Amazon shopping tasks ranging from 10 to 30 steps each, a curated subset of 129 WebVoyager tasks on live websites, and 630 WebArena tasks across shopping, maps, Reddit, and GitLab. All main experiments use Claude 3.5 Sonnet as the backbone LLM.
+  </p>
+  <p>
+    On shopping tasks, StructuredAgent achieves 83.3% on easy tasks, compared to 69.2% for AgentOccam, and 37.8% on hard tasks with Structured Memory, compared to 28.4%. On WebArena, StructuredAgent achieves 52.6% overall, outperforming AgentOccam by 6 points and simpler baselines by over 20 points.
+  </p>
+  <p>
+    With Claude 3.7 Sonnet, StructuredAgent still outperforms AgentOccam by 7.8 points, demonstrating that hierarchical planning adds value beyond what the base model alone provides. Evaluation with Kimi-K2 confirms these benefits generalize across model families.
+  </p>
+
+  <figure>
+    <img src="images/webvoyager.png" alt="Results on WebVoyager" />
+    <figcaption>Results on WebVoyager.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/webarena.png" alt="Results on WebArena" />
+    <figcaption>Results on WebArena.</figcaption>
+  </figure>
+
+  <h2>Interpretability and Human Oversight</h2>
+  <p>
+    The AND/OR tree representation offers a practical benefit beyond performance: interpretability. The tree serves as a readable artifact that transparently reflects the agent's reasoning and enables precise error localization. When a subgoal is incorrectly decomposed, a human operator can inspect the tree, identify the error, and inject corrective subgoals at the appropriate level.
+  </p>
+
+  <figure>
+    <img src="images/intervention.png" alt="Human Decomposition Intervention in AND/OR Tree Planning" />
+    <figcaption>Human Decomposition Intervention in AND/OR Tree Planning. When the agent incorrectly decomposes a task — here finding the driving route between the home cities of the 1980 and 1991 Super Bowl champions — a human operator intercepts the flawed plan and injects three corrective subgoals into the AND/OR tree, yielding the correct route from Pittsburgh, PA to East Rutherford, NJ.</figcaption>
+  </figure>
+
+  <h2>Conclusion</h2>
+  <p>
+    StructuredAgent addresses the core limitations of current web agents by reintroducing hierarchical planning through AND/OR trees, a formalism that directly mirrors the decomposition, backtracking, and constraint-tracking strategies that characterize human problem-solving. The framework separates global planning from local decision-making and assigns each to the component best suited for it: tree management to the framework and page-level reasoning to the LLM.
+  </p>
+  <p>
+    The result is consistent improvement across multiple benchmarks and model families, with the largest gains concentrated precisely where current agents struggle most: long-horizon, multi-constraint tasks that demand sustained, structured reasoning from start to finish.
+  </p>
+
+  <div class="links">
+    <a href="https://arxiv.org/abs/2603.05294" target="_blank">Paper (arXiv)</a>
+    <a href="https://arxiv.org/pdf/2603.05294" target="_blank">PDF</a>
+  </div>
+</body>
+</html>
